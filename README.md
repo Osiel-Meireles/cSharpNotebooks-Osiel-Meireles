@@ -34,7 +34,6 @@ git clone https://github.com/Osiel-Meireles/cSharpNotebooks-Osiel-Meireles.git
 
 2. Abra o VS Code na pasta clonada:
 
-```bash
 cd cSharpNotebooks-Osiel-Meireles
 code .
 
