@@ -1,0 +1,44 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"name":"csharp"},{"name":"fsharp","languageName":"F#","aliases":["f#","fs"]},{"name":"html","languageName":"HTML"},{"name":"http","languageName":"HTTP"},{"name":"javascript","languageName":"JavaScript","aliases":["js"]},{"name":"mermaid","languageName":"Mermaid"},{"name":"pwsh","languageName":"PowerShell","aliases":["powershell"]},{"name":"value"}]}}
+
+#!markdown
+
+### Inicializando um Array
+
+#!csharp
+
+int[] aluno = new int[]
+{
+    1, 2, 3, 4, 5
+};
+
+#!markdown
+
+### Aumentando a capacidade de um Array
+
+#!csharp
+
+Array.Resize(ref aluno, aluno.Length * 2); // Usando o método Resize, precisa-se passar a referência do array usando 'ref' + o nome do array e em seguida o tamanho do aumento.
+
+#!markdown
+
+### Percorrendo um Array usando for
+
+#!csharp
+
+for (var i = 0; i < aluno.Length; i++)
+{
+    Console.WriteLine(aluno[i]);
+}
+
+#!markdown
+
+### Percorrendo um Array usando foreach
+
+#!csharp
+
+foreach (var a in aluno)
+{
+    Console.WriteLine(a);
+}

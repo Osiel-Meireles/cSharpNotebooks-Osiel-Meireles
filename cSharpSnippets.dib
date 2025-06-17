@@ -1,0 +1,126 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"name":"csharp","languageName":"csharp"},{"name":"fsharp","languageName":"F#","aliases":["f#","fs"]},{"name":"html","languageName":"HTML"},{"name":"http","languageName":"HTTP"},{"name":"javascript","languageName":"JavaScript","aliases":["js"]},{"name":"mermaid","languageName":"Mermaid"},{"name":"pwsh","languageName":"PowerShell","aliases":["powershell"]},{"name":"value"}]}}
+
+#!markdown
+
+### Imprimindo uma tabuada
+
+#!csharp
+
+int number = 15;
+
+for (int i = 1; i <= number; i++)
+{
+    int multiply = i * number;
+    Console.WriteLine(i + " * " + number + " = " + multiply);
+}
+
+#!markdown
+
+###  Tratando as iniciais de um nome com CSharp
+
+#!csharp
+
+var nomeCompleto = "osiel santos meireles junior";
+
+var nomeDividido = nomeCompleto.Split(" ");
+string[] nomesComSufixo = new string[]
+{
+    "junior",
+    "neto",
+    "sobrinho",
+    "filho"
+};
+
+for (int i = 0; i < nomeDividido.Length; i++)
+{
+    var nome = nomeDividido[i].ToLower();
+
+    if (nome == "junior")
+    {
+        nomeDividido[i] = "jr";
+    }
+    else if (nomesComSufixo.Contains(nome))
+    {
+        nomeDividido[i] = nome;
+    }
+    else
+    {
+        var primeiraLetraMaiuscula = nomeDividido[i].Substring(0,1).ToUpper();
+        var nomeSemPrimeiraLetra = nomeDividido[i].Substring(1);
+        nomeDividido[i] = primeiraLetraMaiuscula + nomeSemPrimeiraLetra;
+    }
+
+}
+
+var nomeCompletoAgrupado = string.Join(" ", nomeDividido);
+Console.WriteLine(nomeCompletoAgrupado);
+
+#!markdown
+
+### Guardando apenas as iniciais
+
+#!csharp
+
+var nomeCompleto = "osiel santos Meireles";
+var nomeCompletoDiv = nomeCompleto.Split(' ');
+
+for (int i = 0; i < nomeCompletoDiv.Length; i++)
+{
+    var letraInicial = nomeCompletoDiv[i].Substring(0,1).ToUpper();
+    nomeCompletoDiv[i] = letraInicial + ".";
+
+}
+var iniciaisNome = string.Join("",nomeCompletoDiv);
+Console.WriteLine(iniciaisNome);
+
+#!csharp
+
+var numbers = new int[]
+{
+    0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+};
+var numbersCopy = new int[10];
+
+for (var i = 0; i < numbers.Length; i++)
+{
+    numbersCopy[i] = numbers[i];
+    Console.WriteLine(numbersCopy[i]);
+}
+
+#!csharp
+
+var numbersString = "0 1 2 3 4 5 6 7 8 9";
+var numbersArray = numbersString.Split(' ');
+var numbersConvertedFromString = Array.ConvertAll(numbersArray, Convert.ToInt32);
+
+foreach (var number in numbersConvertedFromString)
+{
+    int contador = 0;
+    Console.WriteLine("Type: " + number.GetType() + " | data: " + number);
+}
+
+#!csharp
+
+var list = new List<int>{0, 1, 2, 3, 4};
+var listFromArray = new List<int>(numbers);
+
+list.Add(5);
+
+list.Remove(1);
+
+list.RemoveRange(0,2);
+
+list.AddRange(2,9);
+
+list.AddRange(0, 1, 5, 6, 7, 8);
+
+list.Remove(5);
+
+list.Sort();
+
+foreach (var item in list)
+{
+    Console.WriteLine(item);
+}

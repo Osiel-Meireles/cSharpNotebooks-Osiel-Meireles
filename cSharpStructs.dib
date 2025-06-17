@@ -1,0 +1,46 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"name":"csharp"},{"name":"fsharp","languageName":"F#","aliases":["f#","fs"]},{"name":"html","languageName":"HTML"},{"name":"http","languageName":"HTTP"},{"name":"javascript","languageName":"JavaScript","aliases":["js"]},{"name":"mermaid","languageName":"Mermaid"},{"name":"pwsh","languageName":"PowerShell","aliases":["powershell"]},{"name":"value"}]}}
+
+#!markdown
+
+### Criando uma Struct
+
+#!csharp
+
+struct Employee
+{
+    public int Id;
+    public string Name;
+    public string Function;
+    public double Salary;
+    public int YearsEmployed; 
+
+    public void SalaryUpgrade()
+    {
+        double salary = Salary;
+        double yearsEmployed = YearsEmployed;
+
+        if (Function == "Oreia")
+        {
+            double salaryUpgrade =  salary * 0.50;
+            double salaryUpgraded = salary + salaryUpgrade;
+            Console.WriteLine("Aumento de salário: R$" + salaryUpgraded);
+        }
+    }
+}
+
+#!markdown
+
+### Setando os parâmetros da Struct
+
+#!csharp
+
+var employee = new Employee();
+employee.Id = 1;
+employee.Name = "Joãozinho";
+employee.Function = "Oreia";
+employee.Salary = 15000;
+employee.YearsEmployed = 4;
+
+employee.SalaryUpgrade();
