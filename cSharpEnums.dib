@@ -2,10 +2,96 @@
 
 {"kernelInfo":{"defaultKernelName":"csharp","items":[{"name":"csharp"},{"name":"fsharp","languageName":"F#","aliases":["f#","fs"]},{"name":"html","languageName":"HTML"},{"name":"http","languageName":"HTTP"},{"name":"javascript","languageName":"JavaScript","aliases":["js"]},{"name":"mermaid","languageName":"Mermaid"},{"name":"pwsh","languageName":"PowerShell","aliases":["powershell"]},{"name":"value"}]}}
 
+#!markdown
+
+### Enums
+
+Enums são é tipo uma lista de opções, mas com um nome mais bonito. Eles servem para representar valores fixos e pré-definidos, como dias da semana, status de pedido ou níveis de acesso, por exemplo.
+
+#!markdown
+
+Imagine isso aqui:
+
 #!csharp
 
-enum EProductType
+enum DiaDaSemana
 {
-    Product = 1,
-    Service = 2
+    Segunda,
+    Terca,
+    Quarta,
+    Quinta,
+    Sexta,
+    Sabado,
+    Domingo
 }
+
+#!markdown
+
+Você pode usar dessa forma:
+
+#!csharp
+
+DiaDaSemana hoje = DiaDaSemana.Sexta;
+
+#!markdown
+
+Fica muito mais legível do que usar 1, 2 ou 3.
+É basicamente isso: dar nomes significativos a números inteiros, pra deixar o código mais claro e sem mágica.
+
+#!markdown
+
+Mais um exemplo prático de como fazer o uso dos enums, pra melhorar a compreensão, seria da seguinte forma:
+
+#!csharp
+
+enum StatusPedido
+{
+    Pendente,
+    Processando,
+    Enviado,
+    Entregue,
+    Cancelado
+}
+
+#!markdown
+
+Agora podemos usar o Enum StatusPedido assim:
+
+#!csharp
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        StatusPedido statusAtual = StatusPedido.Processando;
+
+        switch (statusAtual)
+        {
+            case StatusPedido.Pendente:
+                Console.WriteLine("O pedido está pendente de confirmação.");
+                break;
+
+            case StatusPedido.Processando:
+                Console.WriteLine("O pedido está sendo processado.");
+                break;
+
+            case StatusPedido.Enviado:
+                Console.WriteLine("O pedido foi enviado para o transporte.");
+                break;
+
+            case StatusPedido.Entregue:
+                Console.WriteLine("O pedido já foi entregue ao cliente.");
+                break;
+
+            case StatusPedido.Cancelado:
+                Console.WriteLine("O pedido foi cancelado.");
+                break;
+        }
+    }
+}
+
+#!markdown
+
+Teste o código acima para ver o output.

@@ -4,6 +4,21 @@
 
 #!markdown
 
+### Array
+
+Um array é uma coleção de dados do mesmo tipo, mas com tamanho fixo.
+Pensa nele como uma caixinha de compartimentos numerados, onde cada compartimento guarda um valor.
+
+Características de um Array:
+
+- Você acessa pelos índices: numeros[1] → 20
+
+- O índice sempre começa em 0
+
+- O tamanho é definido na criação e não muda
+
+#!markdown
+
 ### Inicializando um Array
 
 #!csharp

@@ -1,0 +1,66 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"name":"csharp"},{"name":"fsharp","languageName":"F#","aliases":["f#","fs"]},{"name":"html","languageName":"HTML"},{"name":"http","languageName":"HTTP"},{"name":"javascript","languageName":"JavaScript","aliases":["js"]},{"name":"mermaid","languageName":"Mermaid"},{"name":"pwsh","languageName":"PowerShell","aliases":["powershell"]},{"name":"value"}]}}
+
+#!markdown
+
+### Estruturas condicionais em C#
+
+#!markdown
+
+### If, Else if e Else
+
+Os famosos se, senão se e senão.
+
+Exemplo de uso dos três em ação:
+
+#!csharp
+
+int idade = 18;
+
+if (idade < 12) // Usamos parêntesis para a condição.
+{
+    Console.WriteLine("Criança"); // O código a ser avaliado na condição deve estar dentro de chaves.
+}
+else if(idade > 12 && idade < 18)
+{
+    Console.WriteLine("Adolescente");
+}
+else
+{
+    Console.WriteLine("Adulto");
+}
+
+#!markdown
+
+### Switch
+
+Um tipo de *IF* mais organizado, ideal para comparar uma variável com vários valores:
+
+#!csharp
+
+string dia = "Segunda";
+
+switch (dia)
+{
+    case "Segunda":
+        Console.WriteLine("Começo de semana");
+        break;
+    case "Sexta":
+        Console.WriteLine("Quase fim de semana");
+        break;
+    default:
+        Console.WriteLine("Outro dia");
+        break;
+}
+
+#!markdown
+
+### Operador ternário (?:)
+
+É um *IF* mais curto e direto, bom para atribuições mais simples;
+
+#!csharp
+
+int nota = 7;
+string resultado = nota >= 6 ? "Aprovado" : "Reprovado";

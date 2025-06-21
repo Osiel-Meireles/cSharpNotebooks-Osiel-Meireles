@@ -4,6 +4,35 @@
 
 #!markdown
 
+### Struct
+
+Com struct em C#, você pode criar estruturas de dados simples e eficientes, ideais para representar coisas pequenas e imutáveis.
+Struct em C# é tipo uma "caixinha leve" pra guardar dados simples, como coordenadas ou cores. Diferente das classes, elas não precisam de new pra usar, ocupam menos memória e são copiadas por valor, não por referência.
+
+Aqui vão alguns exemplos do que dá pra criar:
+
+- Ponto no espaço: Point(x, y)
+
+- Tamanho ou dimensão: Size(largura, altura)
+
+- Cor: Color(r, g, b)
+
+- Data customizada: Data(dia, mês, ano)
+
+- Moeda ou valor monetário: Dinheiro(valor, moeda)
+
+- Temperatura: Temperatura(valor, escala)
+
+- Vetores e coordenadas 2D/3D
+
+- Resultado de operação: tipo um Result(sucesso, mensagem)
+
+Elas são ótimas quando:
+
+    você quer agilidade (menos consumo de memória), não precisa de herança e o dado é imutável e pequeno.
+
+#!markdown
+
 ### Criando uma Struct
 
 #!csharp

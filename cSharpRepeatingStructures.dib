@@ -1,0 +1,82 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"name":"csharp"},{"name":"fsharp","languageName":"F#","aliases":["f#","fs"]},{"name":"html","languageName":"HTML"},{"name":"http","languageName":"HTTP"},{"name":"javascript","languageName":"JavaScript","aliases":["js"]},{"name":"mermaid","languageName":"Mermaid"},{"name":"pwsh","languageName":"PowerShell","aliases":["powershell"]},{"name":"value"}]}}
+
+#!markdown
+
+### Estruturas de repetição
+
+#!markdown
+
+### For
+É o loop clássico: você usa ele quando sabe quantas vezes quer repetir.
+
+#!csharp
+
+// Devemos atribuir o tipo para a variável do contador, nesse caso 'i', em seguida fazemos a comparação e finalmente o operador de pós incremento 'i++'.
+for (int i = 0; i < 5; i++) // A condição do loop fica entre parêntesis, enquanto o código a ser repetido fica entre chaves.
+{
+    Console.WriteLine($"Contando: {i}"); // Aqui criamos um contador simples usando interpolação de strings, onde o contador 'i' será incrementado enquanto ele for menor que 5.
+}
+
+#!markdown
+
+### While
+Este loop repete enquanto a condição for verdadeira. Ideal para quando você não sabe quantas vezes quer repetir.
+
+#!csharp
+
+int i = 0; // Setamos um contador para sofrer incremento. Não é obrigatório, já que a condição para o loop pode se dar de N maneiras diferentes.
+while (i < 5) // A condição do loop fica entre parêntesis, enquanto o código a ser repetido fica entre chaves.
+{
+    Console.WriteLine($"Contando: {i}");
+    i++; // O contador deve sofrar incremento, para que o loop não se torne infinito.
+}
+
+// Teste o trecho abaixo fora deste notebook, em um arquivo .cs normal, pois os Polyglot Notebooks tem uma espécie de bug com o método Console.ReadLine.
+
+string senha = "abcd";
+string senhaInput = "";
+
+while (senhaInput != senha) // Enquanto a senha inputada pelo usuário for diferente da senha padrão, o loop se repete e coleta novamente a senha até cumprir a condição.
+{
+    Console.WriteLine("Senha incorreta. Acesso negado.");
+    senhaInput = Console.ReadLine();
+}
+
+Console.WriteLine("Senha correta. Acesso permitido.");
+
+#!markdown
+
+### Do While
+Igual ao While, mas garante que o loop vai executar pelo menos uma vez, já que a condição é verificada após uma rodada do loop.
+
+#!csharp
+
+int i = 0;
+do // Faça, - ou repita - enquanto a condição lá embaixo não for cumprida.
+{
+    Console.WriteLine($"Contando: {i}");
+    i++;
+} while (i < 5); // Perceba que aqui os parêntesis de condição do While são precedidos por ponto e vírgula.
+
+#!markdown
+
+### Foreach
+Perfeito para percorrer coleções, como List, Array e afins, sem se preocupar com índice.
+
+#!csharp
+
+string[] nomes = { "Osiel", "João", "Maria" };
+
+foreach (string nome in nomes)
+{
+    Console.WriteLine($"Olá, {nome}!");
+}
+
+#!markdown
+
+### Bizu sobre quando usar qual:
+    Sabe o número de repetições? For.
+    Vai repetir até uma condição mudar? While.
+    Quer percorrer os itens em uma lista de forma prática e rápida? Foreach.

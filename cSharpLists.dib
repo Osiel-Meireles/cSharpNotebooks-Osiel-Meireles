@@ -4,6 +4,26 @@
 
 #!markdown
 
+### List<>
+
+Uma List<T> em C# é tipo uma caixa flexível onde você guarda várias coisas do mesmo tipo, e pode adicionar, remover, acessar e ordenar tudo de forma bem fácil.
+
+O que dá pra fazer com ela:
+
+- Add() → adiciona item
+
+- Remove() → remove item
+
+- Count → vê quantos tem
+
+- Contains() → checa se tem algo
+
+- Clear() → limpa tudo
+
+- Sort() → ordena
+
+#!markdown
+
 ### Inicializando uma List<>
 
 #!csharp

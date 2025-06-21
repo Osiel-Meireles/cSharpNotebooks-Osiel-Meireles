@@ -1,0 +1,67 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"name":"csharp"},{"name":"fsharp","languageName":"F#","aliases":["f#","fs"]},{"name":"html","languageName":"HTML"},{"name":"http","languageName":"HTTP"},{"name":"javascript","languageName":"JavaScript","aliases":["js"]},{"name":"mermaid","languageName":"Mermaid"},{"name":"pwsh","languageName":"PowerShell","aliases":["powershell"]},{"name":"value"}]}}
+
+#!markdown
+
+### Tipos de dados em C#
+
+#!markdown
+
+#### Tipos de Valor (Value Types)
+
+| Tipo      | .NET Struct      | Tamanho | Valor Mínimo               | Valor Máximo               |
+|-----------|------------------|---------|----------------------------|----------------------------|
+| `byte`    | System.Byte       | 8 bits  | 0                          | 255                        |
+| `sbyte`   | System.SByte      | 8 bits  | -128                       | 127                        |
+| `short`   | System.Int16      | 16 bits | -32.768                    | 32.767                     |
+| `ushort`  | System.UInt16     | 16 bits | 0                          | 65.535                     |
+| `int`     | System.Int32      | 32 bits | -2.147.483.648             | 2.147.483.647              |
+| `uint`    | System.UInt32     | 32 bits | 0                          | 4.294.967.295              |
+| `long`    | System.Int64      | 64 bits | -9.223.372.036.854.775.808 | 9.223.372.036.854.775.807  |
+| `ulong`   | System.UInt64     | 64 bits | 0                          | 18.446.744.073.709.551.615 |
+| `float`   | System.Single     | 32 bits | ±1.5 × 10⁻⁴⁵              | ±3.4 × 10³⁸                |
+| `double`  | System.Double     | 64 bits | ±5.0 × 10⁻³²⁴             | ±1.7 × 10³⁰⁸               |
+| `decimal` | System.Decimal    | 128 bits| ±1.0 × 10⁻²⁸              | ±7.9 × 10²⁸                |
+| `char`    | System.Char       | 16 bits | '\u0000'                   | '\uffff' (Unicode)         |
+| `bool`    | System.Boolean    | 1 bit*  | `false`                    | `true`                     |
+
+
+O tipo `bool` usa internamente 1 byte na memória, mas conceitualmente representa apenas 1 bit.
+
+---
+
+
+#### Tipos de Referência (Reference Types)
+
+| Tipo      | .NET Struct      | Descrição                                |
+|-----------|------------------|-------------------------------------------|
+| `string`  | System.String     | Cadeia de caracteres (imutável)           |
+| `object`  | System.Object     | Tipo base para todos os tipos             |
+| `dynamic` | Dinâmico          | Define o tipo em tempo de execução        |
+| `class`   | N/A               | Usado para criar tipos personalizados     |
+| `array`   | N/A               | Representa uma coleção de elementos       |
+
+#!markdown
+
+#### Você pode declarar variáveis desta forma
+
+#!csharp
+
+int idade = 30;
+
+#!markdown
+
+#### Nullable Types (Tipos nulos)
+
+Você pode tornar qualquer tipo de valor **nulo** usando `?` após o tipo.
+Use a atribuição de Nullable Types quando quiser declarar variáveis que serão preenchidas futuramente.
+
+#!csharp
+
+int? idade = null;
+
+if (idade.HasValue) // VERIFICANDO SE HÁ ALGUM VALOR NA ARNAZENADO NA VARIÁVEL 'idade' USANDO O MÉTODO 'HasValue'.
+    Console.WriteLine(idade.Value);
+else
+    Console.WriteLine("Idade não definida.");
